@@ -1,4 +1,4 @@
-var Rx = require('rx');
+import Rx = require('@reactivex/rxjs');
 
 var source = Rx.Observable.interval(1000);
 
@@ -17,8 +17,5 @@ var subSubject2 = subject.subscribe(
     function () { console.log('onCompleted'); });
 
 setTimeout(function () {
-    // Clean up
-    subject.onCompleted();
-    subSubject1.dispose();
-    subSubject2.dispose();
+    subject.complete();
 }, 5000);

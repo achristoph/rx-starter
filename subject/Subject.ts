@@ -1,4 +1,4 @@
-var Rx = require('rx');
+import Rx = require('@reactivex/rxjs');
 
 var subject = new Rx.Subject();
 
@@ -13,5 +13,5 @@ var subscription = subject.subscribe(
         console.log('Completed');
     });
 
-subject.onNext(42);
-subject.onNext(56);
+subject.next(42);
+subject.next(56);

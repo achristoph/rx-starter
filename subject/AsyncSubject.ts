@@ -1,12 +1,12 @@
 //  AsyncSubject is similar to the Replay and Behavior subjects, however it will only store the last value, and only publish it when the sequence is completed
-var Rx = require('rx');
+import Rx = require('@reactivex/rxjs');
 var subject = new Rx.AsyncSubject();
 
 var i = 0;
 var handle = setInterval(function () {
-    subject.onNext(i);
+    subject.next(i);
     if (++i > 3) {
-        subject.onCompleted();
+        subject.complete();
         clearInterval(handle);
     }
 }, 500);

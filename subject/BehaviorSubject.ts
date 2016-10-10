@@ -1,5 +1,5 @@
 //  Like ReplaySubject, except that it only stored the last value it published
-var Rx = require('rx');
+import Rx = require('@reactivex/rxjs');
 /* Initialize with initial value of 42 */
 var subject = new Rx.BehaviorSubject(42);
 
@@ -15,8 +15,8 @@ var subscription = subject.subscribe(
     });
 // => Next: 42
 
-subject.onNext(56);
+subject.next(56);
 // => Next: 56
 
-subject.onCompleted();
+subject.complete();
 // => Completed
