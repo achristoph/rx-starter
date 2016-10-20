@@ -1,7 +1,7 @@
 import Rx = require('@reactivex/rxjs');
 var fetch = require('node-fetch');
 
-var streamA = Rx.Observable.of(3, 4);
+var streamA = Rx.Observable.of(1, 2, 3);
 var streamB = streamA.map(a => 10 * a);
 
 streamB.subscribe(b => console.log(b));

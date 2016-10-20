@@ -6,11 +6,12 @@ var i = 0;
 var handle = setInterval(function () {
     subject.next(i);
     if (++i > 3) {
-        subject.complete();
+        // subject.complete();
+        console.log('clearing interval');
         clearInterval(handle);
     }
 }, 500);
-
+//1,2,3,4,...
 var subscription = subject.subscribe(
     function (x) {
         console.log('Next: ' + x.toString());
