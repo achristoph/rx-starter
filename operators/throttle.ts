@@ -1,5 +1,5 @@
 import Rx = require('@reactivex/rxjs');
-var foo = Rx.Observable.interval(500).take(5);
+var data = Rx.Observable.interval(500).take(5);
 
 /*
 --0--1--2--3--4|
@@ -8,10 +8,10 @@ var foo = Rx.Observable.interval(500).take(5);
 --0-----2-----4|
 */
 
-var result = foo.throttleTime(1000);
+var result = data.throttleTime(1000);
 
 result.subscribe(
-  (x)=>console.log('next ' + x),
-  (err)=>console.log('error ' + err),
-  ()=>console.log('done')
+  (x) => console.log(`next: ${x}`),
+  (e) => console.log(`error: ${e}`),
+  () => console.log(`done!`)
 );
