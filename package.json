@@ -18,7 +18,8 @@
   "homepage": "https://github.com/achristoph/rx-starter#readme",
   "dependencies": {
     "@reactivex/rxjs": "^5.2.0",
-    "node-fetch": "^1.6.3"
+    "node-fetch": "^2.3.0",
+    "rxjs": "^6.4.0"
   },
   "devDependencies": {
     "@types/node": "^6.0.45"
